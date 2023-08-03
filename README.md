@@ -34,3 +34,5 @@ Berdasarkan analisa tersebut, buat project monorepo (pada repository ini) dengan
 - Data: data yang diperoleh harus menggunakan Rest API, temen-temen boleh menggunakan dummy api seperti [mockachino](https://www.mockachino.com/), [firebase](https://firebase.google.com/) atau sejenisnya
 - CSS Framework: bebas, contohnya bootstrap, materialize-css, tailwindcss dan lain-lain
 - arhitecture: Silahkan pilih monolith atau microfrontend
+
+## Jawaban

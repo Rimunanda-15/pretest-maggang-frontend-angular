@@ -26,7 +26,7 @@ export class UserService {
     return this.httpclient.post(`${environment.api}/api/user`, userInput ,{observe: "response"});
   }
 
-  Update(id: number, userUpdate: UserInput){
+  update(id: number, userUpdate: UserInput){
     return this.httpclient.put(`${environment.api}/api/user/${id}`, userUpdate ,{ observe: 'response' });
   }
 }

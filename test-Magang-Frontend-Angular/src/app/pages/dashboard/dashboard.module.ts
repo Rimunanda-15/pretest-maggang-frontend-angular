@@ -15,6 +15,16 @@ import { RouterModule } from '@angular/router';
 import { UserService } from './user/user.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserDetailsComponent } from './user/user-details/user-details.component';
+import { UserUpdateComponent } from './user/user-update/user-update.component';
+import { CategoryServiceService } from './category/category-service.service';
+import { ProductInputComponent } from './product/product-input/product-input.component';
+import { CategoryInputComponent } from './category/category-input/category-input.component';
+import { CategoryDetailsComponent } from './category/category-details/category-details.component';
+import { CategoryUpdateComponent } from './category/category-update/category-update.component';
+import { ProductUpdateComponent } from './product/product-update/product-update.component';
+import { ProductEditComponent } from './product/product-edit/product-edit.component';
+import { ProductDetailsComponent } from './product/product-details/product-details.component';
+import { ProductServiceService } from './product/product-service.service';
 
 
 @NgModule({
@@ -25,7 +35,15 @@ import { UserDetailsComponent } from './user/user-details/user-details.component
     CategoryComponent,
     HomeComponent,
     UserInputComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    UserUpdateComponent,
+    ProductInputComponent,
+    CategoryInputComponent,
+    CategoryDetailsComponent,
+    CategoryUpdateComponent,
+    ProductUpdateComponent,
+    ProductEditComponent,
+    ProductDetailsComponent
   ],
   imports: [
     CommonModule,
@@ -35,7 +53,9 @@ import { UserDetailsComponent } from './user/user-details/user-details.component
     ReactiveFormsModule
   ],
   providers: [
-    UserService
+    UserService,
+    CategoryServiceService,
+    ProductServiceService
   ]
 })
 export class DashboardModule { }

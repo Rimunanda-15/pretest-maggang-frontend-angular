@@ -1,0 +1,72 @@
+<div class="column is-10-desktop is-offset-2-desktop is-9-tablet is-offset-3-tablet is-12-mobile">
+    <div class="p-1">
+        <div class="columns is-variable is-desktop">
+            <div class="column">
+                <h1 class="title" style="margin-top: 80px"> User Edit Form </h1>
+            </div>
+        </div>
+
+        <!-- Center the table content -->
+        <div class="columns is-desktop">
+            <div class="column is-centered">
+                <form [formGroup]="userUpdateForm" (ngSubmit)="update()">
+                    <div class="field">
+                        <label class="label">Name</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input formControlName="name" class="input is-success" type="text" placeholder="Text input" value="bulma">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-user"></i>
+                            </span>
+                            <div *ngIf="
+                    userUpdateForm.get('name')?.invalid &&
+                    userUpdateForm.get('name')?.touched
+                  " class="text-danger" style="color: red;">
+                                Name is required.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Email</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input formControlName="email" class="input is-success" type="email" placeholder="Email input" value="hello@">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                            <div *ngIf="
+                    userUpdateForm.get('email')?.invalid &&
+                    userUpdateForm.get('email')?.touched
+                  " class="text-danger" style="color: red;" >
+                                Email is required and should be a valid email address.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Phone</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input formControlName="phone" class="input is-success" type="tel" placeholder="Phone input" value="+62">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-phone"></i>
+                            </span>
+                            <div *ngIf="
+                              userUpdateForm.get('phone')?.invalid &&
+                              userUpdateForm.get('phone')?.touched
+                            " class="text-danger" style="color: red;">
+                                Phone is required and should have at least 11 digits and
+                                maximum 12.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field is-grouped">
+                        <div class="control">
+                            <button class="button is-link">Submit</button>
+                        </div>
+                        <div class="control">
+                            <button (click) ="backToUser()" class="button is-link is-light">Cancel</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

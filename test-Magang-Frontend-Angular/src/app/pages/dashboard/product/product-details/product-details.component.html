@@ -1,0 +1,53 @@
+<div class="column is-10-desktop is-offset-2-desktop is-9-tablet is-offset-3-tablet is-12-mobile">
+    <div class="p-1">
+        <div class="columns is-variable is-desktop">
+            <div class="column">
+                <h1 class="title" style="margin-top: 80px"> User Details </h1>
+            </div>
+        </div>
+
+        <!-- Center the table content -->
+        <div class="columns is-desktop">
+            <div class="column is-centered">
+                <form >
+                    <div class="field">
+                        <label class="label"> Product Name</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input class="input is-success" type="text" placeholder="Text input" value="{{ product.name }}" readonly>
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-user"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Stok</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input class="input is-success" type="number" value="{{ product.stok }}" readonly>
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Price</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input class="input is-success" type="number" placeholder="Phone input" value="{{product.harga}}" readonly>
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-dollar-sign"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="field is-grouped">
+                        <button [routerLink]="['/','dashboard','user']" (click)="onClickDelete()" class="button is-small is-danger">
+                            <span class="icon">
+                                <i class="fas fa-trash-alt"></i>
+                            </span>
+                            <span>Delete</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

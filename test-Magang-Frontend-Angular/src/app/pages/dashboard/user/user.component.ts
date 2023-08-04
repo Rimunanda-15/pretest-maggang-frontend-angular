@@ -29,6 +29,9 @@ export class UserComponent implements OnInit {
   goToDetails(id: number){
     this.router.navigate(['/','dashboard','user','userdetails', id])
   }
+  goToEdit(id: number){
+    this.router.navigate(['/','dashboard','user','useredit', id])
+  }
 
   onClickDelete(id: number) {
     if (confirm('Are you sure you want to delete this user?')) {

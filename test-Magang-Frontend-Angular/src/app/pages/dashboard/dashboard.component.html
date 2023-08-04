@@ -22,9 +22,6 @@
                     <i class="fas fa-home icon"></i>
                     <p style="margin-left: 5px">Home</p>
                 </a>
-                <a [routerLink]="['/','dashboard','user']" class="navbar-item"> User </a>
-                <a href="#" class="navbar-item"> Product </a>
-                <a href="#" class="navbar-item"> Category </a>
             </div>
             <div class="navbar-end">
                 <div class="navbar-item has-dropdown is-hoverable">
@@ -52,10 +49,10 @@
                                 <a [routerLink]="['/','dashboard','user']"><i class="fas fa-users"></i> Users</a>
                             </li>
                             <li>
-                                <a><i class="fas fa-list"></i> Category</a>
+                                <a [routerLink]="['/','dashboard','category']"><i class="fas fa-list"></i> Category</a>
                             </li>
                             <li>
-                                <a><i class="fas fa-box"></i> Product</a>
+                                <a [routerLink]="['/','dashboard','product']"><i class="fas fa-box"></i> Product</a>
                             </li>
                         </ul>
                     </aside>

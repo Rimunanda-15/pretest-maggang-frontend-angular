@@ -1,0 +1,98 @@
+<div class="column is-10-desktop is-offset-2-desktop is-9-tablet is-offset-3-tablet is-12-mobile">
+    <div class="p-1">
+        <div class="columns is-variable is-desktop">
+            <div class="column">
+                <h1 class="title" style="margin-top: 80px"> UpdateProduct Form </h1>
+            </div>
+        </div>
+
+        <!-- Center the table content -->
+        <div class="columns is-desktop">
+            <div class="column is-centered">
+                <form [formGroup]="productForm" (ngSubmit)="update()">
+                    <div class="field">
+                        <label class="label"> Product Name</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input formControlName="name" class="input is-success" type="text" placeholder="Product input">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-box"></i>
+                            </span>
+                            <div *ngIf="
+                    productForm.get('name')?.invalid &&
+                    productForm.get('name')?.touched
+                  " class="text-danger" style="color: red;">
+                                Name is required.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label"> Category Type </label>
+                        <div class="control has-icons-left has-icons-right">
+                            <div class="select is-rounded">
+                                <select id="categoryId" formControlName="categoryId">
+                                    <option value="" disabled selected>
+                                        Select the Type of Product Categories 
+                                      </option>
+                                  <option *ngFor="let category of category" [value]="category.id">
+                                    {{category.name}}
+                                  </option>
+                                </select>
+                              </div>
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-box"></i>
+                            </span>
+                            <div *ngIf="
+                    productForm.get('categoryId')?.invalid &&
+                    productForm.get('categoryId')?.touched
+                  " class="text-danger" style="color: red;">
+                                Category is required.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label"> Stok </label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input formControlName="stok" class="input is-success" type="number" placeholder="stock">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-cubes" ></i>
+                            </span>
+                            <div *ngIf="
+                    productForm.get('stock')?.invalid &&
+                    productForm.get('stock')?.touched
+                  " class="text-danger" style="color: red;">
+                                Stock is required.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label"> Price </label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input formControlName="harga" class="input is-success" type="number" placeholder="IDR. ">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-dollar-sign" ></i>
+                            </span>
+                            <div *ngIf="
+                    productForm.get('harga')?.invalid &&
+                    productForm.get('harag')?.touched
+                  " class="text-danger" style="color: red;">
+                                price is required.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field is-grouped">
+                        <div class="control">
+                            <button class="button is-link">Submit</button>
+                        </div>
+                        <div class="control">
+                            <button (click) ="backToProduct()" class="button is-link is-light">Cancel</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

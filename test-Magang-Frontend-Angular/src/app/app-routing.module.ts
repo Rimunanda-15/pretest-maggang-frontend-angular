@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { UserInputComponent } from './pages/dashboard/user/user-input/user-input.component';
 
 const routes: Routes = [
   {

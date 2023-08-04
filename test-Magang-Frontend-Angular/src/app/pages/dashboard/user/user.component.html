@@ -1,10 +1,8 @@
 <div class="column is-10-desktop is-offset-2-desktop is-9-tablet is-offset-3-tablet is-12-mobile">
     <div class="p-1">
-        <div class="columns is-variable is-desktop ">
+        <div class="columns is-variable is-desktop">
             <div class="column">
-                <h1 class="title" style="margin-top: 80px;">
-                    User Information
-                </h1>
+                <h1 class="title" style="margin-top: 80px">User Information</h1>
             </div>
         </div>
 
@@ -12,13 +10,13 @@
         <div class="columns is-desktop">
             <div class="column is-centered">
                 <div>
-                    <button class="button is-primary">
+                    <button type="button" [routerLink]="['/','dashboard','user','add']" class="button is-primary">
                         <span class="icon">
                             <i class="fas fa-user-plus"> </i>
                         </span>
                     </button>
                 </div>
-                <table class='table'>
+                <table class="table">
                     <thead>
                         <tr>
                             <th>No</th>
@@ -29,14 +27,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>arim</td>
-                            <td>arim@gmail.com</td>
-                            <td>0812</td>
+                        <tr *ngFor="let data of userList; let i = index">
+                            <td>{{ i + 1 }}</td>
+                            <td>{{ data.name }}</td>
+                            <td>{{ data.email }}</td>
+                            <td>{{ data.phone }}</td>
                             <td>
                                 <div class="buttons">
-                                    <button class="button is-small is-info">
+                                    <button (click)="goToDetails(data.id)" class="button is-small is-info">
                                         <span class="icon">
                                             <i class="fas fa-info-circle"></i>
                                         </span>
@@ -48,19 +46,11 @@
                                         </span>
                                         <span>Edit</span>
                                     </button>
-                                    <button class="button is-small is-danger">
-                                        <span class="icon">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </span>
-                                        <span>Delete</span>
-                                    </button>
                                 </div>
-
                             </td>
                         </tr>
 
                         <!-- Add more table rows as needed -->
-
                     </tbody>
                 </table>
             </div>

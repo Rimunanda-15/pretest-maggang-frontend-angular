@@ -1,0 +1,53 @@
+<div class="column is-10-desktop is-offset-2-desktop is-9-tablet is-offset-3-tablet is-12-mobile">
+    <div class="p-1">
+        <div class="columns is-variable is-desktop">
+            <div class="column">
+                <h1 class="title" style="margin-top: 80px"> User Details </h1>
+            </div>
+        </div>
+
+        <!-- Center the table content -->
+        <div class="columns is-desktop">
+            <div class="column is-centered">
+                <form >
+                    <div class="field">
+                        <label class="label">Name</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input class="input is-success" type="text" placeholder="Text input" value="{{user.name}}" readonly>
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-user"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Email</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input class="input is-success" type="email" placeholder="Email input" value="{{user.email}}" readonly>
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Phone</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input class="input is-success" type="tel" placeholder="Phone input" value="{{user.phone}}" readonly>
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-phone"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="field is-grouped">
+                        <button [routerLink]="['/','dashboard','user']" (click)="onClickDelete()" class="button is-small is-danger">
+                            <span class="icon">
+                                <i class="fas fa-trash-alt"></i>
+                            </span>
+                            <span>Delete</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

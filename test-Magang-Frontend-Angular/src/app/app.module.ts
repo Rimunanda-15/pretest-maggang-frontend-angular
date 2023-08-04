@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from 'src/material.module';
 import { UserInputComponent } from './pages/dashboard/user/user-input/user-input.component';
 
 
@@ -13,11 +12,8 @@ import { UserInputComponent } from './pages/dashboard/user/user-input/user-input
   declarations: [
     AppComponent,
     HomePageComponent,
-    UserInputComponent
   ],
   imports: [
-    MaterialModule,
-    BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule
   ],

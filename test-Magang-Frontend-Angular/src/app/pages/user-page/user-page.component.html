@@ -1,0 +1,94 @@
+<nav class="navbar is-fixed-top box-shadow-y">
+    <div class="navbar-brand">
+        <a role="button" class="navbar-burger toggler" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+
+        <a href="#" class="navbar-item has-text-weight-bold has-text-black">
+            Buy Product
+        </a>
+        <a role="button" class="navbar-burger nav-toggler" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+    <div class="navbar-menu has-background-white">
+        <div class="navbar-start">
+            <a href="#" class="navbar-item">
+                <i class="fas fa-home icon"></i>
+                <p style="margin-left: 5px">Home</p>
+            </a>
+        </div>
+        <div class="navbar-end">
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link"> {{user.name}}  </a>
+                <div class="navbar-dropdown is-right">
+                    <a href="#" class="navbar-item has-text-danger">Log Out</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+      <div *ngFor="let data of productList; let i = index" class="col-lg-4">
+        <div class="card card-margin">
+          <div class="card-header no-border">
+            <h5 class="card-title">{{ i + 1 }}</h5>
+          </div>
+          <div class="card-body pt-0">
+            <div class="widget-49">
+              <div class="widget-49-title-wrapper">
+                <div class="widget-49-date-primary">
+                  <span class="widget-49-date-day">09</span>
+                  <span class="widget-49-date-month">apr</span>
+                </div>
+                <div class="widget-49-meeting-info">
+                  <span class="widget-49-pro-title">{{ data.name }}</span>
+                  <span class="widget-49-meeting-time">12:00 to 13.30 Hrs</span>
+                </div>
+              </div>
+              <ul class="widget-49-meeting-points">
+                <li class="widget-49-meeting-item">
+                  <span>Category Type: {{ data.categoryName }}</span>
+                </li>
+                <li class="widget-49-meeting-item">
+                  <span>Price: {{ data.harga }}</span>
+                </li>
+                <li class="widget-49-meeting-item">
+                  <span>Stok: {{ data.stok }}</span>
+                </li>
+              </ul>
+              <div class="widget-49-meeting-action">
+                <form>
+                  <div class="field has-addons">
+                    <div class="control">
+                      <input
+                        class="input"
+                        type="number"
+                        placeholder="Quantity"
+                        min="1"
+                        max="{{ data.stok }}"
+                      />
+                    </div>
+                    <div class="control" style="margin-left: 20px;">
+                      <button class="button is-primary custom-button">
+                        <span class="icon" style="padding-right: 10 px ;">
+                          <i class="fas fa-shopping-cart"></i>
+                        </span >
+                       <p>Buy Now</p> 
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

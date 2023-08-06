@@ -4,11 +4,21 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { UserInputComponent } from './pages/dashboard/user/user-input/user-input.component';
+import { LoginComponent } from './pages/login/login.component';
+import { UserPageComponent } from './pages/user-page/user-page.component';
 
 const routes: Routes = [
   {
     path: "",
     component: HomePageComponent
+  },
+  {
+    path: "login",
+    component: LoginComponent
+  },
+  {
+    path: "user/buy/:id",
+    component: UserPageComponent
   },
   {
     path: "dashboard",

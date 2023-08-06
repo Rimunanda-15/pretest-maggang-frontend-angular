@@ -10,3 +10,8 @@ export class UserInput{
     email!: string;
     phone!: string;
 }
+
+export class LoginInput{
+    id!: number;
+    email!: string;
+}

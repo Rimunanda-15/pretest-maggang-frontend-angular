@@ -6,18 +6,29 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserInputComponent } from './pages/dashboard/user/user-input/user-input.component';
+import { LoginComponent } from './pages/login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { UserService } from './pages/dashboard/user/user.service';
+import { UserPageComponent } from './pages/user-page/user-page.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
+    LoginComponent,
+    UserPageComponent,
   ],
   imports: [
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

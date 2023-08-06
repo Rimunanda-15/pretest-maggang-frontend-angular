@@ -1,0 +1,69 @@
+<section class="hero is-primary is-fullheight">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+          <form [formGroup]="loginForm" (ngSubmit)="login()" class="box">
+            <div class="field">
+              <label for="" class="label">Name</label>
+              <div class="control has-icons-left">
+                <div class="select is-small">
+                  <select formControlName="id">
+                    <option selected disabled>Select dropdown</option>
+                    <option *ngFor="let user of user " [value]="user.id">                      
+                      {{user.name}}
+                    </option>
+                  </select>
+                </div>
+                <span class="icon is-small is-left">
+                  <i class="fa fa-user"></i>
+                </span>
+                <div
+                  *ngIf="
+                    loginForm.get('id')?.invalid &&
+                    loginForm.get('id')?.touched
+                  "
+                  class="text-danger"
+                  style="color: red"
+                >
+                  Name is required.
+                </div>
+              </div>
+            </div>
+            <div class="field">
+              <label for="" class="label">Email</label>
+              <div class="control has-icons-left">
+                <input
+                  formControlName="email"
+                  type="email"
+                  placeholder="e.g. bobsmith@gmail.com"
+                  class="input"
+                  required
+                />
+                <span class="icon is-small is-left">
+                  <i class="fa fa-envelope"></i>
+                </span>
+              </div>
+              <div
+                  *ngIf="
+                    loginForm.get('email')?.invalid &&
+                    loginForm.get('email')?.touched
+                  "
+                  class="text-danger"
+                  style="color: red"
+                >
+                  Email is required.
+                </div>
+            </div>
+            <div class="field">
+              <label> choose your name and email </label>
+            </div>
+            <div class="field">
+              <button class="button is-success">Login</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

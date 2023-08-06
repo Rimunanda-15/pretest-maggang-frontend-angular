@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.development';
-import {User,  UserInput} from 'src/app/model/User'
+import {LoginInput, User,  UserInput} from 'src/app/model/User'
 
 @Injectable({
   providedIn: 'root'
@@ -29,4 +29,8 @@ export class UserService {
   update(id: number, userUpdate: UserInput){
     return this.httpclient.put(`${environment.api}/api/user/${id}`, userUpdate ,{ observe: 'response' });
   }
+  login(loginInput: LoginInput){
+    return this.httpclient.post(`${environment.api}/api/user/login`, loginInput ,{observe: "response"});
+  }
+
 }

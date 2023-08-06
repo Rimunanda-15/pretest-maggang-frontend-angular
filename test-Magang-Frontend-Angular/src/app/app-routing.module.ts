@@ -6,6 +6,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { UserInputComponent } from './pages/dashboard/user/user-input/user-input.component';
 import { LoginComponent } from './pages/login/login.component';
 import { UserPageComponent } from './pages/user-page/user-page.component';
+import { ThankYouComponent } from './pages/thank-you/thank-you.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,10 @@ const routes: Routes = [
   {
     path: "user/buy/:id",
     component: UserPageComponent
+  },
+  {
+    path: "thankyou",
+    component: ThankYouComponent
   },
   {
     path: "dashboard",

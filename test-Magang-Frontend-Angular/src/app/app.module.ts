@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './pages/dashboard/user/user.service';
 import { UserPageComponent } from './pages/user-page/user-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ThankYouComponent } from './pages/thank-you/thank-you.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     HomePageComponent,
     LoginComponent,
     UserPageComponent,
+    ThankYouComponent,
   ],
   imports: [
     AppRoutingModule,

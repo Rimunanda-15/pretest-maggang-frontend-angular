@@ -63,7 +63,7 @@
                 </li>
               </ul>
               <div class="widget-49-meeting-action">
-                <form>
+                <form [formGroup]="transactionForm">
                   <div class="field has-addons">
                     <div class="control">
                       <input
@@ -72,10 +72,11 @@
                         placeholder="Quantity"
                         min="1"
                         max="{{ data.stok }}"
+                        formControlName="quantity"
                       />
                     </div>
                     <div class="control" style="margin-left: 20px;">
-                      <button class="button is-primary custom-button">
+                      <button  (click)="buyNow(data.id)" class="button is-primary custom-button">
                         <span class="icon" style="padding-right: 10 px ;">
                           <i class="fas fa-shopping-cart"></i>
                         </span >

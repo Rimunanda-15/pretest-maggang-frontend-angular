@@ -33,4 +33,8 @@ export class UserService {
     return this.httpclient.post(`${environment.api}/api/user/login`, loginInput ,{observe: "response"});
   }
 
+  getTotalUserCount() {
+    return this.httpclient.get<number>(`${environment.api}/api/user/total`, { observe: 'response' });
+  }
+
 }

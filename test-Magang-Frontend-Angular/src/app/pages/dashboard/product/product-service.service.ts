@@ -34,5 +34,4 @@ export class ProductServiceService {
     return this.httpclient.post(`${environment.api}/api/detailproduct`, transaction ,{observe: "response"});
   }
 
-
 }

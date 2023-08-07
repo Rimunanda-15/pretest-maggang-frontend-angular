@@ -53,6 +53,11 @@ export class UserPageComponent implements OnInit {
   }
 
   buyNow(productId: number) {
+    // Tampilkan dialog konfirmasi sebelum membeli produk
+    const isConfirmed = window.confirm('Apakah Anda yakin ingin membeli produk ini?');
+  
+    // Jika pengguna mengonfirmasi, lanjutkan dengan pembelian
+    if (isConfirmed) {
       // Set the productId form control value based on the clicked product's id
       this.transactionForm.get('productId')?.patchValue(productId);
   
@@ -60,10 +65,10 @@ export class UserPageComponent implements OnInit {
   
       this.service.buy(this.transactionForm.value).subscribe(resp => {
         if (resp.status == 200) {
-          alert('berhasil menambah produk');
+          alert('berhasil membeli produk');
           this.router.navigate(['/', 'thankyou']);
         }
       });
-    
+    }
   }
 }

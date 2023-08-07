@@ -28,4 +28,8 @@ export class CategoryServiceService {
   update(id: number, cateogryUpdate: InputCategory){
     return this.httpclient.put(`${environment.api}/api/category/${id}`, cateogryUpdate ,{ observe: 'response' });
   }
+
+  getTotalCategoryCount() {
+    return this.httpclient.get<number>(`${environment.api}/api/category/total`, { observe: 'response' });
+  }
 }

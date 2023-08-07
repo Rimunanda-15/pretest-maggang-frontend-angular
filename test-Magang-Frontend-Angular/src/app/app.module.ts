@@ -12,6 +12,7 @@ import { UserService } from './pages/dashboard/user/user.service';
 import { UserPageComponent } from './pages/user-page/user-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ThankYouComponent } from './pages/thank-you/thank-you.component';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -24,9 +25,10 @@ import { ThankYouComponent } from './pages/thank-you/thank-you.component';
   ],
   imports: [
     AppRoutingModule,
+    CommonModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
     UserService
